@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>ปัจฉิมนิเทศ 2568 โรงเรียนบ้านร้อง อำเภอปัว จังหวัดน่าน</title>
+<meta name="description" content="กำแพงความทรงจำปัจฉิมนิเทศ ป.6 โรงเรียนบ้านร้อง อำเภอปัว จังหวัดน่าน ปีการศึกษา 2568"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&family=Mitr:wght@400;500;600&family=Kanit:wght@400;500&family=Mali:wght@400;600&family=Charm:wght@700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:#0a0008;color:#ffe0f0;font-family:'Sarabun',sans-serif;min-height:100vh;}
+.stars{position:fixed;inset:0;pointer-events:none;z-index:0;background-image:
+  radial-gradient(1px 1px at 8% 12%,rgba(255,180,210,.8) 0%,transparent 100%),
+  radial-gradient(1.5px 1.5px at 55% 8%,rgba(255,200,220,.9) 0%,transparent 100%),
+  radial-gradient(1px 1px at 22% 68%,rgba(255,255,255,.5) 0%,transparent 100%),
+  radial-gradient(1px 1px at 77% 44%,rgba(255,255,255,.4) 0%,transparent 100%),
+  radial-gradient(1px 1px at 40% 88%,rgba(255,160,200,.6) 0%,transparent 100%),
+  radial-gradient(1.5px 1.5px at 91% 25%,rgba(255,180,210,.7) 0%,transparent 100%),
+  radial-gradient(1px 1px at 15% 35%,rgba(255,130,180,.4) 0%,transparent 100%),
+  radial-gradient(1px 1px at 84% 80%,rgba(255,200,220,.5) 0%,transparent 100%);}
+.nebula{position:fixed;inset:0;pointer-events:none;z-index:0;background:
+  radial-gradient(ellipse at 15% 5%,rgba(220,30,100,.2) 0%,transparent 45%),
+  radial-gradient(ellipse at 85% 90%,rgba(180,0,80,.18) 0%,transparent 45%),
+  radial-gradient(ellipse at 50% 50%,rgba(30,0,18,.92) 0%,transparent 100%);}
+.app{position:relative;z-index:1;}
+
+/* Header */
+.header{text-align:center;padding:32px 20px 10px;}
+.header-cap{font-size:2.6rem;display:inline-block;animation:float 3.5s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-6deg);}50%{transform:translateY(-12px) rotate(6deg);}}
+.header-title{font-family:'Charm',cursive;font-weight:700;font-size:clamp(1.4rem,4vw,2.5rem);
+  background:linear-gradient(135deg,#ff6eb0,#ff9ed2,#ffcce8);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.3;}
+.header-sub{font-family:'Mitr',sans-serif;font-size:.82rem;color:rgba(255,180,210,.55);letter-spacing:1.5px;margin-top:5px;}
+.header-line{width:60px;height:2px;background:linear-gradient(90deg,transparent,#ff6eb0,transparent);margin:12px auto 0;}
+
+/* Stats */
+.stats-bar{display:flex;justify-content:center;gap:28px;padding:10px 20px 6px;}
+.stat-item{text-align:center;}
+.stat-num{font-family:'Mitr',sans-serif;font-size:1.4rem;font-weight:600;color:#ff9ed2;}
+.stat-label{font-size:.68rem;color:rgba(255,180,210,.4);letter-spacing:1px;}
+
+/* Tabs */
+.tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:10px 14px 4px;}
+.tab-btn{font-family:'Mitr',sans-serif;font-size:.82rem;padding:8px 18px;border-radius:50px;border:none;cursor:pointer;transition:all .3s;}
+.tab-btn.active{background:linear-gradient(135deg,#e8005a,#ff6eb0);color:#fff;font-weight:600;box-shadow:0 4px 20px rgba(232,0,90,.45);}
+.tab-btn.inactive{background:rgba(255,100,160,.07);color:rgba(255,180,210,.6);border:1px solid rgba(255,100,160,.15);}
+.tab-btn.inactive:hover{background:rgba(255,100,160,.14);color:#ffcce8;}
+
+/* Backup */
+.backup-bar{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:4px 16px 12px;}
+.bk-btn{font-family:'Mitr',sans-serif;font-size:.75rem;padding:6px 14px;border-radius:9px;border:none;cursor:pointer;transition:all .2s;}
+.bk-btn.exp{background:rgba(255,110,176,.12);color:#ff9ed2;border:1px solid rgba(255,110,176,.25);}
+.bk-btn.exp:hover{background:rgba(255,110,176,.25);}
+.bk-btn.imp{background:rgba(255,180,210,.08);color:#ffcce8;border:1px solid rgba(255,180,210,.18);}
+.bk-btn.imp:hover{background:rgba(255,180,210,.18);}
+
+/* Wall */
+.tap-hint{text-align:center;font-size:.71rem;color:rgba(255,180,210,.22);margin-bottom:12px;font-family:'Mitr',sans-serif;}
+.wall-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;padding:0 16px 140px;max-width:1200px;margin:0 auto;}
+
+/* Card */
+.card-wrapper{perspective:1100px;cursor:pointer;animation:cardIn .5s ease both;}
+@keyframes cardIn{from{opacity:0;transform:translateY(18px) scale(.95);}to{opacity:1;transform:none;}}
+.card-inner{position:relative;height:280px;transition:transform .65s ease;transform-style:preserve-3d;}
+.card-inner.flipped{transform:rotateY(180deg);}
+.card-face{position:absolute;inset:0;border-radius:20px;backface-visibility:hidden;padding:16px;
+  box-shadow:0 8px 32px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.25);overflow:hidden;}
+.card-front{display:flex;flex-direction:column;gap:8px;}
+.card-back{transform:rotateY(180deg);display:flex;align-items:center;justify-content:center;}
+.sticker-row{display:flex;gap:3px;flex-wrap:wrap;font-size:1.2rem;}
+.img-wrap{border-radius:10px;overflow:hidden;height:100px;flex-shrink:0;}
+.card-img{width:100%;height:100%;object-fit:cover;display:block;}
+.card-msg{font-size:.88rem;line-height:1.6;color:#3d0a1e;flex:1;overflow:hidden;word-break:break-word;
+  display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;}
+.card-footer{display:flex;align-items:center;gap:8px;padding-top:8px;border-top:1px solid rgba(0,0,0,.12);margin-top:auto;flex-shrink:0;}
+.card-name{font-weight:600;font-size:.8rem;color:#3d0a1e;}
+.card-time{font-size:.65rem;color:rgba(61,10,30,.55);}
+.card-edit-btn{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(61,10,30,.2);
+  background:rgba(61,10,30,.08);color:#3d0a1e;font-size:.75rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
+.card-edit-btn:hover{background:rgba(61,10,30,.2);}
+.avatar-el{border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  font-weight:700;overflow:hidden;}
+.back-inner{text-align:center;padding:12px;}
+.back-from{font-family:'Mali',cursive;font-size:1rem;font-weight:600;color:#3d0a1e;margin-top:8px;}
+.back-date,.back-edited,.back-bio{font-size:.75rem;color:rgba(61,10,30,.6);margin-top:4px;}
+.back-edited{font-style:italic;}
+.back-hint{font-size:.64rem;color:rgba(61,10,30,.3);margin-top:10px;}
+
+/* Directory */
+.dir-section{max-width:800px;margin:0 auto;padding:0 16px 140px;}
+.dir-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;}
+.dir-card{background:rgba(255,100,160,.05);border:1px solid rgba(255,100,160,.12);border-radius:16px;overflow:hidden;cursor:pointer;transition:all .25s;animation:cardIn .4s ease both;}
+.dir-card:hover{background:rgba(255,100,160,.1);transform:translateY(-3px);}
+.dir-cover{height:44px;}
+.dir-body{padding:0 12px 12px;margin-top:-16px;}
+.dir-name{font-family:'Mitr',sans-serif;font-weight:600;font-size:.9rem;color:#ffe0f0;margin-top:6px;}
+.dir-nick{font-size:.72rem;color:rgba(255,180,210,.45);font-style:italic;}
+.dir-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px;}
+.dir-tag{font-size:.65rem;background:rgba(255,110,176,.08);border-radius:10px;padding:2px 8px;color:rgba(255,180,210,.5);}
+.dir-posts-count{font-family:'Mitr',sans-serif;font-size:.7rem;color:rgba(255,110,176,.65);margin-top:5px;}
+.dir-me-banner{background:linear-gradient(135deg,rgba(232,0,90,.1),rgba(255,110,176,.06));border:1px solid rgba(255,110,176,.2);border-radius:14px;padding:12px 16px;margin-bottom:16px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .2s;}
+.dir-me-banner:hover{background:rgba(255,110,176,.18);}
+.dir-me-text{font-family:'Mitr',sans-serif;font-size:.85rem;color:rgba(255,200,220,.75);}
+.dir-me-sub{font-size:.72rem;color:rgba(255,180,210,.4);margin-top:2px;}
+
+/* My profile */
+.my-prof-section{max-width:540px;margin:0 auto;padding:0 16px 140px;}
+.my-prof-card{background:rgba(255,100,160,.05);border:1px solid rgba(255,100,160,.12);border-radius:20px;overflow:hidden;}
+.my-cover{height:90px;}
+.my-body{padding:0 18px 18px;}
+.my-avatar-row{display:flex;align-items:flex-end;gap:12px;margin-top:-28px;margin-bottom:8px;}
+.prof-meta-tag{font-family:'Mitr',sans-serif;font-size:.72rem;background:rgba(255,110,176,.1);border:1px solid rgba(255,110,176,.2);border-radius:20px;padding:3px 10px;color:rgba(255,180,210,.7);margin:3px 3px 0 0;display:inline-block;}
+.badge-pill{display:inline-flex;align-items:center;gap:4px;font-family:'Mitr',sans-serif;font-size:.74rem;background:rgba(255,200,0,.1);border:1px solid rgba(255,200,0,.22);color:rgba(255,220,80,.9);padding:4px 11px;border-radius:20px;margin:3px 3px 0 0;}
+.no-profile{text-align:center;padding:60px 20px;}
+.no-prof-icon{font-size:3rem;margin-bottom:12px;opacity:.5;}
+.no-prof-text{font-family:'Mitr',sans-serif;font-size:.95rem;color:rgba(255,180,210,.45);line-height:1.7;margin-bottom:20px;}
+
+/* Forms */
+.fg{margin-bottom:14px;}
+.fl{display:block;font-family:'Mitr',sans-serif;font-size:.75rem;color:rgba(255,180,210,.48);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+.fi{width:100%;background:rgba(255,100,160,.06);border:1px solid rgba(255,100,160,.15);border-radius:12px;padding:10px 14px;color:#ffe0f0;font-family:'Sarabun',sans-serif;font-size:.96rem;outline:none;transition:border-color .2s;}
+.fi:focus{border-color:rgba(255,110,176,.5);}
+textarea.fi{resize:vertical;min-height:80px;}
+.char-count{text-align:right;font-size:.65rem;color:rgba(255,180,210,.25);margin-top:2px;}
+.sticker-grid{display:flex;flex-wrap:wrap;gap:7px;}
+.sk-opt{width:38px;height:38px;border-radius:10px;border:2px solid transparent;background:rgba(255,100,160,.06);cursor:pointer;font-size:1.15rem;transition:all .2s;}
+.sk-opt.sel{border-color:#ff6eb0;background:rgba(255,110,176,.18);transform:scale(1.1);}
+.bg-grid{display:flex;gap:8px;flex-wrap:wrap;}
+.bg-opt{width:42px;height:42px;border-radius:10px;cursor:pointer;border:3px solid transparent;transition:all .2s;}
+.bg-opt.sel{border-color:#ff6eb0;transform:scale(1.1);}
+.font-grid{display:flex;gap:6px;flex-wrap:wrap;}
+.font-opt{padding:6px 12px;border-radius:8px;border:1px solid rgba(255,100,160,.15);background:rgba(255,100,160,.05);cursor:pointer;color:rgba(255,180,210,.65);font-size:.82rem;transition:all .2s;}
+.font-opt.sel{border-color:#ff6eb0;background:rgba(255,110,176,.18);color:#ffe0f0;}
+.img-upload{border:1.5px dashed rgba(255,110,176,.22);border-radius:12px;padding:14px;text-align:center;cursor:pointer;color:rgba(255,180,210,.4);font-size:.86rem;transition:all .2s;}
+.img-upload:hover{border-color:rgba(255,110,176,.5);}
+.img-prev{width:100%;max-height:100px;object-fit:cover;border-radius:9px;margin-top:7px;}
+.submit-btn{width:100%;padding:14px;border:none;border-radius:14px;background:linear-gradient(135deg,#e8005a,#ff6eb0);color:#fff;font-family:'Mitr',sans-serif;font-size:.98rem;font-weight:600;cursor:pointer;transition:all .3s;margin-top:6px;}
+.submit-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,0,90,.45);}
+.submit-btn:disabled{opacity:.4;cursor:not-allowed;}
+.cancel-btn{width:100%;padding:10px;border:1px solid rgba(255,100,160,.15);border-radius:14px;background:transparent;color:rgba(255,180,210,.4);font-family:'Mitr',sans-serif;font-size:.86rem;cursor:pointer;margin-top:6px;transition:all .2s;}
+.cancel-btn:hover{color:#ffcce8;}
+.shared-notice{text-align:center;font-size:.68rem;color:rgba(255,180,210,.22);margin-top:6px;font-family:'Mitr',sans-serif;}
+
+/* Bottom CTA */
+.bottom-bar{position:fixed;bottom:0;left:0;right:0;z-index:100;padding:12px 20px 24px;background:linear-gradient(to top,rgba(10,0,8,1) 60%,rgba(10,0,8,0));pointer-events:none;}
+.write-btn{width:100%;max-width:480px;display:flex;align-items:center;gap:10px;margin:0 auto;padding:16px 24px;border:none;border-radius:20px;cursor:pointer;pointer-events:all;font-family:'Mitr',sans-serif;color:#fff;background:linear-gradient(135deg,#c4004c,#e8005a,#ff6eb0);box-shadow:0 6px 32px rgba(220,0,80,.55);transition:all .25s;}
+.write-btn:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(220,0,80,.7);}
+.write-btn-text{display:flex;flex-direction:column;align-items:flex-start;line-height:1.2;flex:1;}
+.write-btn-main{font-size:1rem;font-weight:700;}
+.write-btn-sub{font-size:.72rem;opacity:.7;}
+
+/* Modal */
+.overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);display:flex;align-items:flex-end;justify-content:center;}
+.modal{width:100%;max-width:540px;max-height:92vh;overflow-y:auto;background:#140008;border-radius:26px 26px 0 0;border-top:1px solid rgba(255,110,176,.25);padding:24px 22px 40px;animation:slideUp .3s cubic-bezier(.34,1.56,.64,1);}
+@keyframes slideUp{from{transform:translateY(100%);}to{transform:none;}}
+.modal-handle{width:36px;height:4px;background:rgba(255,110,176,.25);border-radius:2px;margin:0 auto 16px;}
+.modal-title{font-family:'Charm',cursive;font-size:1.3rem;text-align:center;background:linear-gradient(135deg,#ff6eb0,#ffcce8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:18px;}
+.editor-steps{display:flex;gap:6px;margin-bottom:16px;overflow-x:auto;}
+.step-btn{font-family:'Mitr',sans-serif;font-size:.77rem;padding:7px 14px;border-radius:20px;border:none;cursor:pointer;white-space:nowrap;transition:all .2s;}
+.step-btn.active{background:linear-gradient(135deg,#e8005a,#ff6eb0);color:#fff;font-weight:600;}
+.step-btn.inactive{background:rgba(255,100,160,.08);color:rgba(255,180,210,.55);border:1px solid rgba(255,100,160,.15);}
+.prof-cover-modal{height:80px;border-radius:20px 20px 0 0;position:relative;margin:-24px -22px 0;flex-shrink:0;}
+.prof-cover-overlay{position:absolute;inset:0;background:rgba(0,0,0,.3);border-radius:inherit;}
+.prof-edit-btn-modal{position:absolute;top:10px;right:12px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);color:#fff;font-family:'Mitr',sans-serif;font-size:.75rem;padding:5px 12px;border-radius:20px;cursor:pointer;}
+.prof-avatar-row-modal{display:flex;align-items:flex-end;gap:12px;padding:0 22px;margin-top:-26px;position:relative;z-index:2;}
+.prof-stats-row{display:flex;align-items:center;justify-content:center;gap:16px;padding:12px 0;border-top:1px solid rgba(255,110,176,.1);border-bottom:1px solid rgba(255,110,176,.1);margin:12px 0;}
+.prof-stat-n{font-family:'Mitr',sans-serif;font-size:1.3rem;font-weight:600;color:#ff9ed2;text-align:center;}
+.prof-stat-l{font-size:.68rem;color:rgba(255,180,210,.38);letter-spacing:.8px;text-align:center;}
+.prof-stat-div{width:1px;height:28px;background:rgba(255,110,176,.15);}
+
+/* Toast */
+.toast{position:fixed;bottom:96px;left:50%;transform:translateX(-50%);z-index:500;background:rgba(20,0,8,.96);border:1px solid rgba(255,110,176,.3);color:#ffe0f0;font-family:'Mitr',sans-serif;font-size:.86rem;padding:11px 20px;border-radius:50px;box-shadow:0 8px 30px rgba(0,0,0,.6);white-space:nowrap;animation:tIn .3s ease;pointer-events:none;}
+@keyframes tIn{from{opacity:0;transform:translateX(-50%) translateY(14px);}to{opacity:1;transform:translateX(-50%);}}
+
+/* Sparkle */
+.sparkle{position:fixed;z-index:300;font-size:1.3rem;pointer-events:none;animation:spkUp 1.4s ease forwards;}
+@keyframes spkUp{0%{opacity:1;transform:translateY(0);}100%{opacity:0;transform:translateY(-80px) scale(.2);}}
+
+/* Empty */
+.empty{text-align:center;padding:60px 20px;color:rgba(255,180,210,.3);}
+.empty-icon{font-size:2.8rem;margin-bottom:12px;opacity:.4;}
+.empty-text{font-family:'Mitr',sans-serif;font-size:.9rem;line-height:1.7;}
+</style>
+</head>
+<body>
+<div class="stars"></div><div class="nebula"></div>
+<div class="app" id="app"></div>
+
+<script>
+// ══════════════════════════════════════════════════
+//  CONSTANTS
+// ══════════════════════════════════════════════════
+const IDB_DB    = "BanRong2568";
+const IDB_POSTS = "posts";
+const IDB_PROF  = "profiles";
+const IDB_VER   = 1;
+const LOCAL_ME  = "banrong-my-profile";
+
+const AVATAR_EMOJIS = ["🎓","🌸","⭐","🦋","🌙","🔮","💝","🎵","🌺","🏆","🎉","✨","🦊","🐬","🌈","🍀","🎨","🚀","💎","🌻"];
+const COVER_GRADIENTS = [
+  "linear-gradient(135deg,#1a0533,#3d1166,#6b21a8)",
+  "linear-gradient(135deg,#0f172a,#1e3a5f,#0e7490)",
+  "linear-gradient(135deg,#1a0a00,#7c2d12,#c2410c)",
+  "linear-gradient(135deg,#0a1628,#1e3a2f,#166534)",
+  "linear-gradient(135deg,#1a0533,#831843,#be185d)",
+  "linear-gradient(135deg,#0c0a1e,#312e81,#4338ca)",
+  "linear-gradient(135deg,#0f0f23,#1e1b4b,#7c3aed)",
+  "linear-gradient(135deg,#1a0a00,#4a1942,#9d174d)",
+];
+const STICKER_OPTIONS = ["🎓","⭐","💫","🌸","🎉","💝","🌙","✨","🎊","💌","🦋","🌈","🎵","🏆","🌺","🔮"];
+const BG_COLORS = [
+  "linear-gradient(135deg,#fff9c4,#ffe082)",
+  "linear-gradient(135deg,#fce4ec,#f8bbd0)",
+  "linear-gradient(135deg,#e8f5e9,#c8e6c9)",
+  "linear-gradient(135deg,#e3f2fd,#bbdefb)",
+  "linear-gradient(135deg,#f3e5f5,#e1bee7)",
+  "linear-gradient(135deg,#fff3e0,#ffe0b2)",
+  "linear-gradient(135deg,#e0f7fa,#b2ebf2)",
+  "linear-gradient(135deg,#fbe9e7,#ffccbc)",
+];
+const FONTS = ["'Sarabun',sans-serif","'Mitr',sans-serif","'Kanit',sans-serif","'Mali',cursive"];
+const FONT_NAMES = ["Sarabun","Mitr","Kanit","Mali"];
+const BADGES = [
+  {id:"early",  label:"Early Bird",   icon:"🐣"},
+  {id:"mem5",   label:"Memory Keeper",icon:"📚"},
+  {id:"mem10",  label:"Story Teller", icon:"📖"},
+  {id:"photo",  label:"Photographer", icon:"📷"},
+  {id:"sticker",label:"Sticker Fan",  icon:"🎨"},
+];
+
+// ══════════════════════════════════════════════════
+//  HELPERS
+// ══════════════════════════════════════════════════
+function timeAgo(ts){
+  const d=Math.floor((Date.now()-ts)/1000);
+  if(d<60)    return"เมื่อกี้";
+  if(d<3600)  return Math.floor(d/60)+" นาที";
+  if(d<86400) return Math.floor(d/3600)+" ชั่วโมง";
+  const days=Math.floor(d/86400);
+  if(days<30)  return days+" วัน";
+  if(days<365) return Math.floor(days/30)+" เดือน";
+  return Math.floor(days/365)+" ปี";
+}
+function fmtDate(ts){return new Date(ts).toLocaleDateString("th-TH",{year:"numeric",month:"long",day:"numeric"});}
+function esc(s){
+  if(!s)return"";
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+function mergeById(a,b){
+  const m=new Map();[...(a||[]),...(b||[])].forEach(x=>m.set(x.id,x));return Array.from(m.values());
+}
+function computeBadges(profile,posts){
+  const my=posts.filter(p=>p.authorId===profile.id),e=[];
+  if(my.length>0&&posts.length>0&&posts[posts.length-1]?.authorId===profile.id)e.push("early");
+  if(my.length>=5)e.push("mem5");
+  if(my.length>=10)e.push("mem10");
+  if(my.some(p=>p.imageData&&p.imageData!=="[img]"))e.push("photo");
+  if(my.some(p=>p.stickers?.length===4))e.push("sticker");
+  return e;
+}
+function avatarHTML(profile,size){
+  if(!profile)return`<div class="avatar-el" style="width:${size}px;height:${size}px;background:linear-gradient(135deg,#e8005a,#ff6eb0);font-size:${size*.44}px;color:#fff;border-radius:50%;">?</div>`;
+  if(profile.avatarImg)return`<img src="${esc(profile.avatarImg)}" style="width:${size}px;height:${size}px;border-radius:50%;object-fit:cover;flex-shrink:0;" alt=""/>`;
+  const txt=profile.avatarEmoji||esc((profile.name||"?")[0].toUpperCase());
+  return`<div class="avatar-el" style="width:${size}px;height:${size}px;background:linear-gradient(135deg,#e8005a,#ff6eb0);font-size:${size*.44}px;color:#fff;">${txt}</div>`;
+}
+
+// ══════════════════════════════════════════════════
+//  IDB
+// ══════════════════════════════════════════════════
+function openIDB(){
+  return new Promise((res,rej)=>{
+    const req=indexedDB.open(IDB_DB,IDB_VER);
+    req.onupgradeneeded=e=>{
+      const db=e.target.result;
+      if(!db.objectStoreNames.contains(IDB_POSTS))db.createObjectStore(IDB_POSTS,{keyPath:"id"});
+      if(!db.objectStoreNames.contains(IDB_PROF)) db.createObjectStore(IDB_PROF, {keyPath:"id"});
+    };
+    req.onsuccess=e=>res(e.target.result);
+    req.onerror  =e=>rej(e.target.error);
+  });
+}
+async function idbPut(store,items){
+  try{
+    const db=await openIDB(),tx=db.transaction(store,"readwrite"),st=tx.objectStore(store);
+    st.clear();items.forEach(i=>st.put(i));
+    return new Promise((r,j)=>{tx.oncomplete=()=>r(true);tx.onerror=e=>j(e);});
+  }catch{return false;}
+}
+async function idbGet(store){
+  try{
+    const db=await openIDB(),tx=db.transaction(store,"readonly");
+    return new Promise((r,j)=>{
+      const req=tx.objectStore(store).getAll();
+      req.onsuccess=e=>r(e.target.result||[]);req.onerror=e=>j(e);
+    });
+  }catch{return[];}
+}
+
+// ══════════════════════════════════════════════════
+//  STATE
+// ══════════════════════════════════════════════════
+let state = {
+  posts: [], profiles: {}, myProfile: null,
+  tab: "wall", loading: true,
+  showForm: false, showEditor: false,
+  viewProfileId: null, editingPostId: null,
+  formMsg:"", formStickers:[], formBg:BG_COLORS[0], formFont:FONTS[0], formImg:null,
+  editorStep:0, editorName:"", editorNick:"", editorBio:"", editorFaculty:"", editorMajor:"",
+  editorYear:"", editorDream:"", editorMemory:"", editorEmoji:"🎓", editorAImg:null,
+  editorCover:COVER_GRADIENTS[0],
+  editMsg:"", editStickers:[], editBg:BG_COLORS[0], editFont:FONTS[0], editImg:null, editConfirmDel:false,
+  toastMsg:null, toastTimer:null,
+};
+
+function setState(patch){
+  state={...state,...patch};
+  render();
+}
+
+// ══════════════════════════════════════════════════
+//  STORAGE
+// ══════════════════════════════════════════════════
+async function persistPosts(posts){
+  await idbPut(IDB_POSTS,posts);
+  // Firebase (optional)
+  if(window._fb){
+    const slim=posts.map(p=>({...p,imageData:p.imageData?"[img]":null}));
+    window._fb.setPosts(slim).catch(()=>{});
+  }
+}
+async function persistProfiles(profiles){
+  await idbPut(IDB_PROF,Object.values(profiles));
+  if(window._fb)window._fb.setProfiles(profiles).catch(()=>{});
+}
+
+// ══════════════════════════════════════════════════
+//  INIT
+// ══════════════════════════════════════════════════
+async function init(){
+  const me=localStorage.getItem(LOCAL_ME);
+  const myProfile=me?JSON.parse(me):null;
+  const [localPosts,localProfiles]=await Promise.all([idbGet(IDB_POSTS),idbGet(IDB_PROF)]);
+  const posts=localPosts.sort((a,b)=>b.timestamp-a.timestamp);
+  const pm=Object.fromEntries(localProfiles.map(p=>[p.id,p]));
+  if(myProfile)pm[myProfile.id]=myProfile;
+  const editorPatch=myProfile?{
+    editorName:myProfile.name||"",editorNick:myProfile.nickname||"",editorBio:myProfile.bio||"",
+    editorFaculty:myProfile.faculty||"",editorMajor:myProfile.major||"",editorYear:myProfile.gradYear||"",
+    editorDream:myProfile.dream||"",editorMemory:myProfile.memory||"",editorEmoji:myProfile.avatarEmoji||"🎓",
+    editorAImg:myProfile.avatarImg||null,editorCover:myProfile.coverGradient||COVER_GRADIENTS[0]
+  }:{};
+  setState({posts,profiles:pm,myProfile,loading:false,...editorPatch});
+}
+
+// ══════════════════════════════════════════════════
+//  ACTIONS
+// ══════════════════════════════════════════════════
+function showToast(msg){
+  if(state.toastTimer)clearTimeout(state.toastTimer);
+  const t=setTimeout(()=>setState({toastMsg:null,toastTimer:null}),3500);
+  setState({toastMsg:msg,toastTimer:t});
+}
+
+async function submitPost(){
+  const {myProfile,formMsg,formStickers,formBg,formFont,formImg,posts}=state;
+  if(!formMsg.trim())return;
+  if(!myProfile){setState({showForm:false,showEditor:true});return;}
+  const post={id:Date.now(),authorId:myProfile.id,name:myProfile.name,
+    message:formMsg.trim(),stickers:formStickers,bg:formBg,font:formFont,
+    imageData:formImg,timestamp:Date.now()};
+  const updated=[post,...posts];
+  setState({posts:updated,showForm:false,tab:"wall",formMsg:"",formStickers:[],formImg:null});
+  await persistPosts(updated);
+  showToast("🌸 บันทึกความทรงจำแล้ว!");
+  spawnSparkles();
+}
+
+async function submitEdit(){
+  const {posts,editingPostId,editMsg,editStickers,editBg,editFont,editImg}=state;
+  if(!editMsg.trim())return;
+  const updated=posts.map(p=>p.id===editingPostId
+    ?{...p,message:editMsg.trim(),stickers:editStickers,bg:editBg,font:editFont,imageData:editImg,editedAt:Date.now()}:p);
+  setState({posts:updated,editingPostId:null});
+  await persistPosts(updated);
+  showToast("✅ แก้ไขแล้ว!");
+}
+
+async function deletePost(id){
+  const updated=state.posts.filter(p=>p.id!==id);
+  setState({posts:updated,editingPostId:null,editConfirmDel:false});
+  await persistPosts(updated);
+  showToast("🗑️ ลบแล้ว");
+}
+
+async function saveProfile(){
+  const {editorName,editorNick,editorBio,editorFaculty,editorMajor,editorYear,
+    editorDream,editorMemory,editorEmoji,editorAImg,editorCover,myProfile,profiles}=state;
+  if(!editorName.trim())return;
+  const prof={
+    id:myProfile?.id||"u_"+Date.now(),
+    name:editorName.trim(),nickname:editorNick.trim(),bio:editorBio.trim(),
+    faculty:editorFaculty.trim(),major:editorMajor.trim(),gradYear:editorYear.trim(),
+    dream:editorDream.trim(),memory:editorMemory.trim(),
+    avatarEmoji:editorEmoji,avatarImg:editorAImg,coverGradient:editorCover,
+    updatedAt:Date.now(),createdAt:myProfile?.createdAt||Date.now()
+  };
+  localStorage.setItem(LOCAL_ME,JSON.stringify(prof));
+  const up={...profiles,[prof.id]:prof};
+  setState({myProfile:prof,profiles:up,showEditor:false});
+  await persistProfiles(up);
+  showToast("✅ บันทึกโปรไฟล์แล้ว!");
+}
+
+function exportBackup(){
+  const blob=new Blob([JSON.stringify({posts:state.posts,profiles:state.profiles},null,2)],{type:"application/json"});
+  const url=URL.createObjectURL(blob),a=document.createElement("a");
+  a.href=url;a.download="banrong2568-backup-"+new Date().toISOString().split("T")[0]+".json";a.click();URL.revokeObjectURL(url);
+  showToast("📦 Export สำเร็จ!");
+}
+
+function importBackup(e){
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=async ev=>{
+    try{
+      const data=JSON.parse(ev.target.result);
+      const imp=Array.isArray(data)?{posts:data,profiles:{}}:data;
+      const mp=mergeById(state.posts,imp.posts||[]).sort((a,b)=>b.timestamp-a.timestamp);
+      const pr={...state.profiles,...(imp.profiles||{})};
+      setState({posts:mp,profiles:pr});
+      await Promise.all([persistPosts(mp),persistProfiles(pr)]);
+      showToast("✅ นำเข้าสำเร็จ!");
+    }catch{showToast("❌ ไฟล์ไม่ถูกต้อง");}
+  };
+  r.readAsText(f);e.target.value="";
+}
+
+function spawnSparkles(){
+  const emojis=["✨","⭐","🌸","💫","🎉"];
+  for(let i=0;i<7;i++) setTimeout(()=>{
+    const el=document.createElement("div");el.className="sparkle";
+    el.style.left=(20+Math.random()*60)+"%";el.style.top=(20+Math.random()*60)+"%";
+    el.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),1500);
+  },i*100);
+}
+
+// ══════════════════════════════════════════════════
+//  RENDER
+// ══════════════════════════════════════════════════
+function renderWall(){
+  const {posts,profiles,myProfile,loading}=state;
+  if(loading)return`<div class="empty"><div class="loading-spinner" style="width:34px;height:34px;border-radius:50%;border:3px solid rgba(255,110,176,.18);border-top-color:#ff6eb0;animation:spin .8s linear infinite;margin:0 auto 12px;"></div><p style="font-family:'Mitr',sans-serif;color:rgba(255,180,210,.4);">กำลังโหลด...</p></div>`;
+  if(!posts.length)return`<div class="empty"><div class="empty-icon">🌸</div><p class="empty-text">ยังไม่มีความทรงจำ<br/>เป็นคนแรกที่แชร์ได้เลย!</p></div>`;
+  return`<p class="tap-hint">แตะข้อความพลิกการ์ด · แตะชื่อดูโปรไฟล์</p>
+  <div class="wall-grid">
+    ${posts.map((p,i)=>renderCard(p,profiles[p.authorId],i,myProfile?.id===p.authorId)).join("")}
+  </div>`;
+}
+
+function renderCard(p,prof,i,isOwner){
+  const msg=esc(p.message);
+  const name=esc(p.name);
+  const ago=timeAgo(p.timestamp);
+  const edited=p.editedAt?" · แก้ไขแล้ว":"";
+  const stickersHTML=(p.stickers||[]).map(s=>`<span>${s}</span>`).join("");
+  const imgHTML=p.imageData&&p.imageData!=="[img]"
+    ?`<div class="img-wrap"><img src="${esc(p.imageData)}" class="card-img" alt=""/></div>`
+    :p.imageData==="[img]"?`<div class="img-ph">📷 มีรูปภาพ</div>`:"";
+  const editBtn=isOwner?`<button class="card-edit-btn" onclick="openEdit(${p.id})">✏️</button>`:"";
+  const profBio=prof?.bio?`<div class="back-bio">"${esc(prof.bio)}"</div>`:"";
+  const editedBack=p.editedAt?`<div class="back-edited">✏️ แก้ไขเมื่อ ${timeAgo(p.editedAt)}</div>`:"";
+  return`
+  <div class="card-wrapper" style="animation-delay:${(i%8)*60}ms" id="card-${p.id}">
+    <div class="card-inner" id="inner-${p.id}">
+      <div class="card-face card-front" style="background:${p.bg};font-family:${p.font}">
+        ${stickersHTML?`<div class="sticker-row">${stickersHTML}</div>`:""}
+        ${imgHTML}
+        <p class="card-msg" onclick="flipCard(${p.id})">${msg}</p>
+        <div class="card-footer">
+          <div style="display:flex;align-items:center;gap:8px;flex:1;cursor:pointer;" onclick="viewProf('${esc(p.authorId)}')">
+            ${avatarHTML(prof,30)}
+            <div><div class="card-name">${name}</div>
+            <div class="card-time">${ago}${edited} · ดูโปรไฟล์</div></div>
+          </div>
+          ${editBtn}
+        </div>
+      </div>
+      <div class="card-face card-back" style="background:${p.bg}" onclick="flipCard(${p.id})">
+        <div class="back-inner">
+          ${avatarHTML(prof,52)}
+          <div class="back-from">จาก ${name}</div>
+          <div class="back-date">${fmtDate(p.timestamp)}</div>
+          ${editedBack}${profBio}
+          <div class="back-hint">แตะเพื่อกลับ</div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+const flippedCards=new Set();
+function flipCard(id){
+  const el=document.getElementById("inner-"+id);
+  if(!el)return;
+  if(flippedCards.has(id)){flippedCards.delete(id);el.classList.remove("flipped");}
+  else{flippedCards.add(id);el.classList.add("flipped");}
+}
+
+function renderDirectory(){
+  const {profiles,myProfile,posts}=state;
+  const list=Object.values(profiles).sort((a,b)=>(a.name||"").localeCompare(b.name||"","th"));
+  const meBanner=myProfile?`
+    <div class="dir-me-banner" onclick="setState({tab:'profile'})">
+      ${avatarHTML(myProfile,40)}
+      <div><div class="dir-me-text">โปรไฟล์ของคุณ — ${esc(myProfile.name)}</div>
+      <div class="dir-me-sub">แตะเพื่อดูและแก้ไข</div></div>
+    </div>`:"";
+  if(!list.length)return`<div class="dir-section">${meBanner}<div class="empty"><div class="empty-icon">👥</div><p class="empty-text">ยังไม่มีสมาชิก</p></div></div>`;
+  const cards=list.map((pr,i)=>{
+    const cnt=posts.filter(p=>p.authorId===pr.id).length;
+    const tags=[pr.faculty&&`<span class="dir-tag">${esc(pr.faculty)}</span>`,pr.gradYear&&`<span class="dir-tag">จบปี ${esc(pr.gradYear)}</span>`].filter(Boolean).join("");
+    const meLabel=myProfile?.id===pr.id?`<span style="font-size:.68rem;color:rgba(255,110,176,.7);"> • คุณ</span>`:"";
+    return`
+    <div class="dir-card" style="animation-delay:${i*50}ms" onclick="viewProf('${esc(pr.id)}')">
+      <div class="dir-cover" style="background:${pr.coverGradient||COVER_GRADIENTS[0]}"></div>
+      <div class="dir-body">
+        <div style="margin-top:-18px;margin-bottom:4px;"><div style="border:2px solid #140008;border-radius:50%;display:inline-block;">${avatarHTML(pr,36)}</div></div>
+        <div class="dir-name">${esc(pr.name)}${meLabel}</div>
+        ${pr.nickname?`<div class="dir-nick">"${esc(pr.nickname)}"</div>`:""}
+        <div class="dir-tags">${tags}</div>
+        <div class="dir-posts-count">${cnt} ความทรงจำ</div>
+      </div>
+    </div>`;
+  }).join("");
+  return`<div class="dir-section">${meBanner}<div class="dir-grid">${cards}</div></div>`;
+}
+
+function renderMyProfile(){
+  const {myProfile,posts}=state;
+  if(!myProfile)return`<div class="my-prof-section">
+    <div class="no-profile">
+      <div class="no-prof-icon">👤</div>
+      <p class="no-prof-text">คุณยังไม่มีโปรไฟล์<br/>สร้างโปรไฟล์เพื่อให้เพื่อนๆ รู้จักคุณ!</p>
+      <button class="submit-btn" style="max-width:220px;margin:0 auto;" onclick="setState({showEditor:true})">✨ สร้างโปรไฟล์</button>
+    </div>
+  </div>`;
+  const myPosts=posts.filter(p=>p.authorId===myProfile.id);
+  const earned=computeBadges(myProfile,posts);
+  const badgesHTML=earned.map(id=>BADGES.find(b=>b.id===id)).filter(Boolean).map(b=>`<span class="badge-pill">${b.icon} ${b.label}</span>`).join("");
+  return`<div class="my-prof-section">
+    <div class="my-prof-card">
+      <div class="my-cover" style="background:${myProfile.coverGradient||COVER_GRADIENTS[0]}"></div>
+      <div class="my-body">
+        <div class="my-avatar-row">
+          <div style="border:3px solid #140008;border-radius:50%;">${avatarHTML(myProfile,70)}</div>
+          <div>
+            <div style="font-family:'Mitr',sans-serif;font-size:1.2rem;font-weight:600;color:#ffe0f0;">${esc(myProfile.name)}</div>
+            ${myProfile.nickname?`<div style="font-size:.8rem;color:rgba(255,180,210,.45);font-style:italic;">"${esc(myProfile.nickname)}"</div>`:""}
+          </div>
+        </div>
+        ${myProfile.bio?`<p style="font-size:.88rem;color:rgba(255,200,220,.65);line-height:1.6;margin:8px 0;">${esc(myProfile.bio)}</p>`:""}
+        <div style="display:flex;flex-wrap:wrap;margin:8px 0;">
+          ${myProfile.faculty?`<span class="prof-meta-tag">🏫 ${esc(myProfile.faculty)}</span>`:""}
+          ${myProfile.major?`<span class="prof-meta-tag">🏡 ${esc(myProfile.major)}</span>`:""}
+          ${myProfile.gradYear?`<span class="prof-meta-tag">🎓 จบ ป.6 ปี ${esc(myProfile.gradYear)}</span>`:""}
+        </div>
+        ${myProfile.dream?`<p style="font-size:.83rem;color:rgba(255,220,150,.8);margin-bottom:6px;">🌟 อยากเป็น: ${esc(myProfile.dream)}</p>`:""}
+        ${myProfile.memory?`<p style="font-size:.83rem;color:rgba(255,150,190,.75);margin-bottom:12px;">💝 ความทรงจำ ป.6: ${esc(myProfile.memory)}</p>`:""}
+        <div class="prof-stats-row">
+          <div><div class="prof-stat-n">${myPosts.length}</div><div class="prof-stat-l">โพสต์</div></div>
+          <div class="prof-stat-div"></div>
+          <div><div class="prof-stat-n">${earned.length}</div><div class="prof-stat-l">ป้าย</div></div>
+          <div class="prof-stat-div"></div>
+          <div><div class="prof-stat-n">${myProfile.gradYear||"—"}</div><div class="prof-stat-l">ปีจบ</div></div>
+        </div>
+        ${earned.length?`<div style="margin:10px 0;"><div style="font-family:'Mitr',sans-serif;font-size:.76rem;color:rgba(255,180,210,.42);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">🏅 ป้ายของคุณ</div>${badgesHTML}</div>`:""}
+        <button class="submit-btn" style="margin-top:4px;" onclick="setState({showEditor:true})">✏️ แก้ไขโปรไฟล์</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderModal(){
+  const {showForm,showEditor,viewProfileId,editingPostId,profiles,myProfile,posts,
+    formMsg,formStickers,formBg,formFont,formImg,
+    editMsg,editStickers,editBg,editFont,editImg,editConfirmDel,editorStep} = state;
+
+  let html="";
+
+  // ── Edit post ──
+  if(editingPostId){
+    const delSection=editConfirmDel
+      ?`<div style="margin-top:8px;background:rgba(255,60,60,.08);border:1px solid rgba(255,80,80,.2);border-radius:14px;padding:14px;text-align:center;">
+          <p style="font-family:'Mitr',sans-serif;font-size:.84rem;color:rgba(255,160,160,.8);margin-bottom:10px;">⚠️ ยืนยันการลบ? ไม่สามารถกู้คืนได้</p>
+          <div style="display:flex;gap:8px;">
+            <button onclick="setState({editConfirmDel:false})" style="flex:1;padding:9px;border:1px solid rgba(255,255,255,.1);border-radius:10px;background:transparent;color:rgba(255,255,255,.5);font-family:'Mitr',sans-serif;font-size:.82rem;cursor:pointer;">ยกเลิก</button>
+            <button onclick="deletePost(${editingPostId})" style="flex:1;padding:9px;border:none;border-radius:10px;background:rgba(220,50,50,.7);color:#fff;font-family:'Mitr',sans-serif;font-size:.82rem;cursor:pointer;font-weight:600;">ลบเลย</button>
+          </div>
+        </div>`
+      :`<button onclick="setState({editConfirmDel:true})" style="width:100%;padding:10px;border:1px solid rgba(255,80,80,.25);border-radius:14px;background:transparent;color:rgba(255,120,120,.55);font-family:'Mitr',sans-serif;font-size:.84rem;cursor:pointer;margin-top:8px;">🗑️ ลบโพสต์นี้</button>`;
+    const preview=`<div style="background:${editBg};font-family:${editFont};border-radius:14px;padding:12px 14px;margin-bottom:14px;">
+      ${editStickers.length?`<div style="font-size:1.1rem;margin-bottom:6px;">${editStickers.join(" ")}</div>`:""}
+      <p style="font-size:.88rem;color:#3d0a1e;line-height:1.6;margin:0;word-break:break-word;">${esc(editMsg)||"ข้อความจะปรากฏที่นี่..."}</p></div>`;
+    html=`<div class="overlay" onclick="if(event.target===this)setState({editingPostId:null,editConfirmDel:false})">
+      <div class="modal">
+        <div class="modal-handle"></div>
+        <div class="modal-title">✏️ แก้ไขความทรงจำ</div>
+        ${preview}
+        <div class="fg"><label class="fl">ข้อความ</label>
+          <textarea class="fi" style="min-height:90px;" oninput="setState({editMsg:this.value})" maxlength="400">${esc(editMsg)}</textarea>
+          <div class="char-count">${editMsg.length}/400</div>
+        </div>
+        <div class="fg"><label class="fl">รูปภาพ</label>
+          <div class="img-upload" onclick="document.getElementById('edit-img-input').click()">
+            ${editImg?`<img src="${esc(editImg)}" class="img-prev"/><div style="margin-top:6px;font-size:.73rem;">แตะเพื่อเปลี่ยน</div>`:`<span>📷 เปลี่ยนรูปภาพ</span>`}
+          </div>
+          <input id="edit-img-input" type="file" accept="image/*" style="display:none;" onchange="loadEditImg(this)"/>
+          ${editImg?`<button onclick="setState({editImg:null})" style="background:none;border:none;color:rgba(255,110,176,.6);font-size:.75rem;cursor:pointer;font-family:'Mitr',sans-serif;margin-top:6px;">✕ ลบรูปภาพ</button>`:""}
+        </div>
+        <div class="fg"><label class="fl">สติ๊กเกอร์</label>
+          <div class="sticker-grid">${STICKER_OPTIONS.map(s=>`<button class="sk-opt${editStickers.includes(s)?" sel":""}" onclick="toggleEditSticker('${s}')">${s}</button>`).join("")}</div>
+        </div>
+        <div class="fg"><label class="fl">สีการ์ด</label>
+          <div class="bg-grid">${BG_COLORS.map(c=>`<div class="bg-opt${editBg===c?" sel":""}" style="background:${c};" onclick="setState({editBg:'${c}'})"></div>`).join("")}</div>
+        </div>
+        <div class="fg"><label class="fl">ฟอนต์</label>
+          <div class="font-grid">${FONTS.map((f,i)=>`<button class="font-opt${editFont===f?" sel":""}" style="font-family:${f};" onclick="setState({editFont:'${f.replace(/'/g,"\\'")}'})">${FONT_NAMES[i]}</button>`).join("")}</div>
+        </div>
+        <button class="submit-btn" onclick="submitEdit()" ${!editMsg.trim()?"disabled":""}>💾 บันทึกการแก้ไข</button>
+        ${delSection}
+        <button class="cancel-btn" onclick="setState({editingPostId:null,editConfirmDel:false})">ยกเลิก</button>
+      </div>
+    </div>`;
+  }
+
+  // ── View profile ──
+  else if(viewProfileId){
+    const prof=profiles[viewProfileId];
+    if(!prof){html="";setState({viewProfileId:null});return html;}
+    const isMe=myProfile?.id===viewProfileId;
+    const myPosts=posts.filter(p=>p.authorId===prof.id);
+    const earned=computeBadges(prof,posts);
+    const badgesHTML=earned.map(id=>BADGES.find(b=>b.id===id)).filter(Boolean).map(b=>`<span class="badge-pill">${b.icon} ${b.label}</span>`).join("");
+    const recentPosts=myPosts.slice(0,3).map(p=>`<div class="prof-post-item" style="background:${p.bg};font-family:${p.font};">
+      ${p.stickers?.length?`<span style="font-size:1rem;">${p.stickers.slice(0,2).join("")} </span>`:""}
+      <span style="color:#3d0a1e;flex:1;font-size:.82rem;">${esc(p.message.slice(0,80))}${p.message.length>80?"…":""}</span>
+      <span style="font-size:.68rem;color:rgba(61,10,30,.5);white-space:nowrap;">${timeAgo(p.timestamp)}</span>
+    </div>`).join("");
+    html=`<div class="overlay" onclick="if(event.target===this)setState({viewProfileId:null})">
+      <div class="modal" style="max-height:90vh;">
+        <div class="modal-handle"></div>
+        <div class="prof-cover-modal" style="background:${prof.coverGradient||COVER_GRADIENTS[0]}">
+          <div class="prof-cover-overlay"></div>
+          ${isMe?`<button class="prof-edit-btn-modal" onclick="setState({viewProfileId:null,showEditor:true})">✏️ แก้ไข</button>`:""}
+        </div>
+        <div class="prof-avatar-row-modal">
+          <div style="border:3px solid #140008;border-radius:50%;">${avatarHTML(prof,72)}</div>
+          <div style="padding-bottom:4px;">
+            <div style="font-family:'Mitr',sans-serif;font-weight:600;font-size:1.1rem;color:#ffe0f0;">${esc(prof.name)}</div>
+            ${prof.nickname?`<div style="font-size:.78rem;color:rgba(255,180,210,.5);font-style:italic;">"${esc(prof.nickname)}"</div>`:""}
+          </div>
+        </div>
+        <div style="padding:14px 22px 4px;">
+          ${prof.bio?`<p style="font-size:.88rem;color:rgba(255,200,220,.7);line-height:1.6;margin-bottom:10px;">💬 ${esc(prof.bio)}</p>`:""}
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">
+            ${prof.faculty?`<span class="prof-meta-tag">🏫 ${esc(prof.faculty)}</span>`:""}
+            ${prof.major?`<span class="prof-meta-tag">🏡 ${esc(prof.major)}</span>`:""}
+            ${prof.gradYear?`<span class="prof-meta-tag">🎓 จบ ป.6 ปี ${esc(prof.gradYear)}</span>`:""}
+          </div>
+          ${prof.dream?`<p style="font-size:.83rem;color:rgba(255,220,150,.8);margin-bottom:6px;">🌟 อยากเป็น: ${esc(prof.dream)}</p>`:""}
+          ${prof.memory?`<p style="font-size:.83rem;color:rgba(255,150,190,.75);margin-bottom:12px;">💝 ความทรงจำ ป.6: ${esc(prof.memory)}</p>`:""}
+          <div class="prof-stats-row">
+            <div><div class="prof-stat-n">${myPosts.length}</div><div class="prof-stat-l">โพสต์</div></div>
+            <div class="prof-stat-div"></div>
+            <div><div class="prof-stat-n">${earned.length}</div><div class="prof-stat-l">ป้าย</div></div>
+            <div class="prof-stat-div"></div>
+            <div><div class="prof-stat-n">${prof.gradYear||"—"}</div><div class="prof-stat-l">ปีจบ</div></div>
+          </div>
+          ${earned.length?`<div style="margin-bottom:14px;"><div style="font-family:'Mitr',sans-serif;font-size:.78rem;color:rgba(255,180,210,.45);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">🏅 ป้ายที่ได้รับ</div>${badgesHTML}</div>`:""}
+          ${myPosts.length?`<div style="margin-bottom:14px;"><div style="font-family:'Mitr',sans-serif;font-size:.78rem;color:rgba(255,180,210,.45);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">🌸 ความทรงจำล่าสุด</div>${recentPosts}</div>`:""}
+        </div>
+        <button class="cancel-btn" style="margin:0 22px 24px;" onclick="setState({viewProfileId:null})">ปิด</button>
+      </div>
+    </div>`;
+  }
+
+  // ── Profile editor ──
+  else if(showEditor){
+    const s=editorStep;
+    const {editorName,editorNick,editorBio,editorFaculty,editorMajor,editorYear,
+      editorDream,editorMemory,editorEmoji,editorAImg,editorCover}=state;
+    const steps=["👤 ข้อมูล","🎨 รูปลักษณ์","💭 เรื่องราว"];
+    const stepBtns=steps.map((t,i)=>`<button class="step-btn ${i===s?"active":"inactive"}" onclick="setState({editorStep:${i}})">${t}</button>`).join("");
+    let fields="";
+    if(s===0){
+      fields=`
+        <div class="fg"><label class="fl">ชื่อ</label><input class="fi" value="${esc(editorName)}" oninput="setState({editorName:this.value})" maxlength="40"/></div>
+        <div class="fg"><label class="fl">ชื่อเล่น</label><input class="fi" value="${esc(editorNick)}" oninput="setState({editorNick:this.value})" maxlength="20"/></div>
+        <div class="fg"><label class="fl">ห้องเรียน</label><input class="fi" placeholder="เช่น ป.6/1" value="${esc(editorFaculty)}" oninput="setState({editorFaculty:this.value})" maxlength="60"/></div>
+        <div class="fg"><label class="fl">ชื่อโรงเรียน</label><input class="fi" value="${esc(editorMajor)}" oninput="setState({editorMajor:this.value})" maxlength="60"/></div>
+        <div class="fg"><label class="fl">ปีที่จบ ป.6</label><input class="fi" placeholder="2568" value="${esc(editorYear)}" oninput="setState({editorYear:this.value})" maxlength="10"/></div>
+        <div class="fg"><label class="fl">Bio</label><textarea class="fi" style="min-height:70px;" oninput="setState({editorBio:this.value})" maxlength="120">${esc(editorBio)}</textarea><div class="char-count">${editorBio.length}/120</div></div>`;
+    } else if(s===1){
+      const emojiGrid=AVATAR_EMOJIS.map(e=>`<button class="sk-opt${editorEmoji===e?" sel":""}" style="font-size:1.3rem;" onclick="setState({editorEmoji:'${e}'})">${e}</button>`).join("");
+      const coverGrid=COVER_GRADIENTS.map(g=>`<div onclick="setState({editorCover:'${g}'})" style="width:52px;height:52px;border-radius:12px;background:${g};cursor:pointer;border:${editorCover===g?"3px solid #ff6eb0":"3px solid transparent"};transform:${editorCover===g?"scale(1.1)":"scale(1)"};transition:all .2s;"></div>`).join("");
+      fields=`
+        <div class="fg">
+          <label class="fl">รูปโปรไฟล์</label>
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
+            ${avatarHTML({avatarImg:editorAImg,avatarEmoji:editorEmoji,name:editorName},64)}
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <button class="bk-btn imp" onclick="document.getElementById('ed-aimg').click()">📷 อัพโหลดรูป</button>
+              ${editorAImg?`<button class="bk-btn exp" style="font-size:.72rem;" onclick="setState({editorAImg:null})">✕ ลบรูป</button>`:""}
+            </div>
+          </div>
+          <input id="ed-aimg" type="file" accept="image/*" style="display:none;" onchange="loadEditorImg(this)"/>
+        </div>
+        <div class="fg"><label class="fl">อีโมจิประจำตัว</label><div class="sticker-grid">${emojiGrid}</div></div>
+        <div class="fg"><label class="fl">สีพื้นหลัง</label><div style="display:flex;gap:10px;flex-wrap:wrap;">${coverGrid}</div></div>`;
+    } else {
+      fields=`
+        <div class="fg"><label class="fl">อยากเป็นอะไรตอนโต</label><textarea class="fi" style="min-height:70px;" oninput="setState({editorDream:this.value})" maxlength="150">${esc(editorDream)}</textarea></div>
+        <div class="fg"><label class="fl">ความทรงจำสุดประทับใจตอน ป.6</label><textarea class="fi" style="min-height:80px;" oninput="setState({editorMemory:this.value})" maxlength="200">${esc(editorMemory)}</textarea></div>`;
+    }
+    const navBtns=`<div style="display:flex;gap:8px;margin-top:8px;">
+      ${s>0?`<button class="cancel-btn" style="flex:1;margin:0;" onclick="setState({editorStep:${s-1}})">← ย้อนกลับ</button>`:""}
+      ${s<2?`<button class="submit-btn" style="flex:2;margin:0;" onclick="setState({editorStep:${s+1}})" ${!editorName.trim()?"disabled":""}>ถัดไป →</button>`
+           :`<button class="submit-btn" style="flex:2;margin:0;" onclick="saveProfile()" ${!editorName.trim()?"disabled":""}>💾 บันทึกโปรไฟล์</button>`}
+    </div>`;
+    html=`<div class="overlay" onclick="if(event.target===this)setState({showEditor:false})">
+      <div class="modal" style="max-height:92vh;">
+        <div class="modal-handle"></div>
+        <div class="modal-title">✏️ แก้ไขโปรไฟล์</div>
+        <div class="editor-steps">${stepBtns}</div>
+        ${fields}${navBtns}
+        <button class="cancel-btn" onclick="setState({showEditor:false})">ยกเลิก</button>
+      </div>
+    </div>`;
+  }
+
+  // ── Post form ──
+  else if(showForm){
+    const profBar=myProfile?`<div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(255,255,255,.05);border-radius:12px;margin-bottom:14px;">
+      ${avatarHTML(myProfile,36)}
+      <div><div style="font-family:'Mitr',sans-serif;font-weight:600;font-size:.88rem;color:#ffe0f0;">${esc(myProfile.name)}</div>
+      <div style="font-size:.7rem;color:rgba(255,255,255,.35);">โพสต์ในนามนี้</div></div></div>`
+      :`<div style="background:rgba(255,110,176,.1);border:1px solid rgba(255,110,176,.2);border-radius:12px;padding:12px 14px;margin-bottom:14px;font-family:'Mitr',sans-serif;font-size:.82rem;color:rgba(255,110,176,.8);">
+        💡 แนะนำให้สร้างโปรไฟล์ก่อน
+        <button onclick="setState({showForm:false,showEditor:true})" style="display:block;margin-top:8px;background:rgba(255,110,176,.2);border:1px solid rgba(255,110,176,.3);border-radius:8px;padding:5px 12px;color:#ff6eb0;cursor:pointer;font-family:'Mitr',sans-serif;font-size:.78rem;">→ สร้างโปรไฟล์ก่อน</button>
+      </div>`;
+    html=`<div class="overlay" onclick="if(event.target===this)setState({showForm:false})">
+      <div class="modal">
+        <div class="modal-handle"></div>
+        <div class="modal-title">✨ บันทึกความทรงจำ</div>
+        ${profBar}
+        <div class="fg"><label class="fl">ข้อความ / ความทรงจำ</label>
+          <textarea class="fi" placeholder="บอกเล่าความทรงจำสมัย ป.6 ที่อยากจดจำ..." oninput="setState({formMsg:this.value})" maxlength="400">${esc(formMsg)}</textarea>
+          <div class="char-count">${formMsg.length}/400</div>
+        </div>
+        <div class="fg"><label class="fl">รูปภาพ (ไม่บังคับ)</label>
+          <div class="img-upload" onclick="document.getElementById('form-img').click()">
+            ${formImg?`<img src="${esc(formImg)}" class="img-prev"/><div style="margin-top:7px;font-size:.73rem;">แตะเพื่อเปลี่ยน</div>`:`<span>📷 อัพโหลดรูป</span>`}
+          </div>
+          <input id="form-img" type="file" accept="image/*" style="display:none;" onchange="loadFormImg(this)"/>
+        </div>
+        <div class="fg"><label class="fl">สติ๊กเกอร์</label>
+          <div class="sticker-grid">${STICKER_OPTIONS.map(s=>`<button class="sk-opt${formStickers.includes(s)?" sel":""}" onclick="toggleFormSticker('${s}')">${s}</button>`).join("")}</div>
+        </div>
+        <div class="fg"><label class="fl">สีการ์ด</label>
+          <div class="bg-grid">${BG_COLORS.map(c=>`<div class="bg-opt${formBg===c?" sel":""}" style="background:${c};" onclick="setState({formBg:'${c}'})"></div>`).join("")}</div>
+        </div>
+        <div class="fg"><label class="fl">ฟอนต์</label>
+          <div class="font-grid">${FONTS.map((f,i)=>`<button class="font-opt${formFont===f?" sel":""}" style="font-family:${f};" onclick="setState({formFont:'${f.replace(/'/g,"\\'")}'})">${FONT_NAMES[i]}</button>`).join("")}</div>
+        </div>
+        <button class="submit-btn" onclick="submitPost()" ${!formMsg.trim()?"disabled":""}>🌸 บันทึกความทรงจำ</button>
+        <button class="cancel-btn" onclick="setState({showForm:false})">ยกเลิก</button>
+        <p class="shared-notice">💾 บันทึกในเครื่อง + Firebase · ทุกคนเห็นได้</p>
+      </div>
+    </div>`;
+  }
+
+  return html;
+}
+
+function render(){
+  const {tab,posts,profiles,myProfile,toastMsg}=state;
+  const profileList=Object.values(profiles);
+  const app=document.getElementById("app");
+  app.innerHTML=`
+    <div class="header">
+      <div class="header-cap">🎓</div>
+      <h1 class="header-title">ปัจฉิมนิเทศ รร.บ้านร้อง</h1>
+      <p class="header-sub">อำเภอปัว จังหวัดน่าน · ปีการศึกษา 2568</p>
+      <div class="header-line"></div>
+    </div>
+    <div class="stats-bar">
+      <div class="stat-item"><div class="stat-num">${posts.length}</div><div class="stat-label">ความทรงจำ</div></div>
+      <div class="stat-item"><div class="stat-num">${profileList.length}</div><div class="stat-label">โปรไฟล์</div></div>
+      <div class="stat-item"><div class="stat-num">∞</div><div class="stat-label">อายุการเก็บ</div></div>
+    </div>
+    <div class="tabs">
+      ${[["wall","🌸 กำแพง"],["directory","👥 สมาชิก"],["profile","👤 ฉัน"]].map(([k,l])=>`<button class="tab-btn ${tab===k?"active":"inactive"}" onclick="setState({tab:'${k}'})">${l}</button>`).join("")}
+    </div>
+    <div class="backup-bar">
+      <button class="bk-btn exp" onclick="exportBackup()">📦 Export</button>
+      <button class="bk-btn imp" onclick="document.getElementById('imp-file').click()">📥 Import</button>
+      <input id="imp-file" type="file" accept=".json" style="display:none;" onchange="importBackup(this)"/>
+    </div>
+    ${tab==="wall"?renderWall():tab==="directory"?renderDirectory():renderMyProfile()}
+    <div class="bottom-bar">
+      <button class="write-btn" onclick="setState({showForm:true})">
+        <span style="font-size:1.3rem;">✏️</span>
+        <span class="write-btn-text"><span class="write-btn-main">บันทึกความทรงจำ</span><span class="write-btn-sub">แชร์ความทรงจำ ป.6 ของคุณ</span></span>
+        <span style="font-size:1.2rem;opacity:.7;">🌸</span>
+      </button>
+    </div>
+    ${renderModal()}
+    ${toastMsg?`<div class="toast">${esc(toastMsg)}</div>`:""}
+  `;
+}
+
+// Global handlers for inline events
+function toggleFormSticker(s){setState({formStickers:state.formStickers.includes(s)?state.formStickers.filter(x=>x!==s):state.formStickers.length<4?[...state.formStickers,s]:state.formStickers});}
+function toggleEditSticker(s){setState({editStickers:state.editStickers.includes(s)?state.editStickers.filter(x=>x!==s):state.editStickers.length<4?[...state.editStickers,s]:state.editStickers});}
+function loadFormImg(i){const f=i.files[0];if(!f)return;const r=new FileReader();r.onload=e=>setState({formImg:e.target.result});r.readAsDataURL(f);}
+function loadEditImg(i){const f=i.files[0];if(!f)return;const r=new FileReader();r.onload=e=>setState({editImg:e.target.result});r.readAsDataURL(f);}
+function loadEditorImg(i){const f=i.files[0];if(!f)return;const r=new FileReader();r.onload=e=>setState({editorAImg:e.target.result});r.readAsDataURL(f);}
+function viewProf(id){setState({viewProfileId:id});}
+function openEdit(id){
+  const p=state.posts.find(x=>x.id===id);if(!p)return;
+  setState({editingPostId:id,editMsg:p.message,editStickers:p.stickers||[],editBg:p.bg,editFont:p.font,editImg:p.imageData&&p.imageData!=="[img]"?p.imageData:null,editConfirmDel:false});
+}
+
+// ── START ──
+init();
+</script>
+</body>
+</html>
